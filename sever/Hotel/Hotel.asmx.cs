@@ -95,7 +95,7 @@ namespace Hotel
 		public SOAPResponse getDisponible(string agence, string aPwd, DateTime debut, DateTime fin, int nbPersonnes = 1)
 		{
 			if (!this.checkAgence(agence, aPwd))
-				return SOAPResponse.errorResponse("agence non recconu", agence);
+				return SOAPResponse.errorResponse("Agence non recconu", agence);
 			List<Offre> dispo = new List<Offre>();
 			Reservation r = new Reservation(debut, fin, nbPersonnes);
 			foreach (Chambre c in this.chambres)

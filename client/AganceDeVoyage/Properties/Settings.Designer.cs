@@ -22,5 +22,15 @@ namespace AganceDeVoyage.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44326/Hotel.asmx")]
+        public string AganceDeVoyage_Hotel_Hotel {
+            get {
+                return ((string)(this["AganceDeVoyage_Hotel_Hotel"]));
+            }
+        }
     }
 }

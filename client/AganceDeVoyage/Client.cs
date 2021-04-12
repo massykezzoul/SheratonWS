@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AganceDeVoyage
+namespace AgenceDeVoyage
 {
-    class Client
+    public class Client
     {
-        string nom { get; }
-        string prenom { get; }
-        string creditCard { get; }
+        public string nom { get; }
+        public string prenom { get; }
+        public string creditCard { get; }
 
         public Client(string nom, string prenom , string creditCard)
         {

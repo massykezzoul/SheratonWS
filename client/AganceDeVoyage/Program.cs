@@ -3,44 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AganceDeVoyage.Hotel;
 using System.ComponentModel;
-
-namespace AganceDeVoyage
+using AganceDeVoyage.Hotel;
+namespace AgenceDeVoyage
 {
     class Program
     {
         static void Main(string[] args)
         {
-            WebService1 hotel = new WebService1();
+            AgenceDeVoyage agence = new AgenceDeVoyage();
 
-            string nom = "k", prenom = "m";
-            DateTime deb = new DateTime(2021, 04, 1), fin = new DateTime(2021, 05, 01);
-            int nbP = 1;
+            Console.WriteLine("Bienvenu à l'agence " + agence.nom);
+            Console.Write("Veuillez saisir votre nom : ");
+            string nom = Console.ReadLine();
+            Console.Write("Veuillez saisir votre prenom : ");
+            string prenom = Console.ReadLine();
+            Console.Write("Veuillez saisir les numéro de votre carte de crédit: ");
+            string creditCard = Console.ReadLine();
 
-            Hotel.Offre[] l = hotel.getDisponible(deb,fin , nbP);
+            Client client = new Client(nom, prenom, creditCard);
 
-            Console.WriteLine("Les offre disponible pour "+ nbP + " personne(s) du "+ deb+ " au "+ fin+ ":");
-            foreach (Hotel.Offre e in l)
-            {
-                Console.WriteLine("Chambre "+ e.nomOffre+ " avec "+ e.lits+ " lits, "+ e.prix+"€ la nuit");
-            }
+            Console.WriteLine("Format de la date : (jj/mm/aaaa)");
+            Console.Write("Veuillez saisir la date de début de votre séjour: ");
+            DateTime deb = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("Veuillez saisir la date de fin de votre séjour: ");
+            DateTime fin = Convert.ToDateTime(Console.ReadLine());
+
+            Console.Write("Nombre de personnes : ");
+            int nbP = Convert.ToInt32(Console.ReadLine());
+
+            Offre[] offres = agence.printDisponibilites(deb, fin, nbP);
+
+            if (offres == null || (offres.Length == 0))
+                return;
 
             Console.Write("Donnnez la chambre de votre choix : ");
             string choix = Console.ReadLine();
 
             Console.WriteLine("Réservation en cours...");
-            bool result = hotel.reserver(choix, deb, fin, nbP, nom, prenom);
-            Console.WriteLine(result ? "OK":"Refusé");
+            agence.reserver(offres, choix, deb, fin, nbP, client);
 
 
-            l = hotel.getDisponible(deb, fin, nbP);
-            Console.WriteLine("Les offre disponible pour " + nbP + " personne(s) du " + deb + " au " + fin + ":");
-            foreach (Hotel.Offre e in l)
-            {
-                Console.WriteLine("Chambre " + e.nomOffre + " avec " + e.lits + " lits, " + e.prix + "€ la nuit");
-            }
+            Console.WriteLine("--------------------------------------------");
+            agence.printDisponibilites(deb, fin, nbP);
             Console.ReadLine();
+            return;
         }
     }
 }
