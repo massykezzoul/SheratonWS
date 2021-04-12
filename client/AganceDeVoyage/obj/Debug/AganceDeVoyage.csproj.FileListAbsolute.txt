@@ -1,0 +1,7 @@
+C:\Users\Massy Kezzoul\Desktop\habbo\AganceDeVoyage\AganceDeVoyage\obj\Debug\AganceDeVoyage.csproj.CoreCompileInputs.cache
+C:\Users\Massy Kezzoul\Desktop\habbo\AganceDeVoyage\AganceDeVoyage\bin\Debug\AganceDeVoyage.exe.config
+C:\Users\Massy Kezzoul\Desktop\habbo\AganceDeVoyage\AganceDeVoyage\bin\Debug\AganceDeVoyage.exe
+C:\Users\Massy Kezzoul\Desktop\habbo\AganceDeVoyage\AganceDeVoyage\bin\Debug\AganceDeVoyage.pdb
+C:\Users\Massy Kezzoul\Desktop\habbo\AganceDeVoyage\AganceDeVoyage\obj\Debug\AganceDeVoyage.exe
+C:\Users\Massy Kezzoul\Desktop\habbo\AganceDeVoyage\AganceDeVoyage\obj\Debug\AganceDeVoyage.pdb
+C:\Users\Massy Kezzoul\Desktop\habbo\AganceDeVoyage\AganceDeVoyage\obj\Debug\AganceDeVoyage.csprojAssemblyReference.cache
